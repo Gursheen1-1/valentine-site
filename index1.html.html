@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, [Hemant]!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ff69b4, #ffb6c1);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 { font-size: 2.5em; margin-bottom: 20px; }
+        .message { font-size: 1.2em; margin: 20px 0; }
+        .photos { display: flex; justify-content: center; flex-wrap: wrap; }
+        .photos img { width: 200px; height: 200px; margin: 10px; border-radius: 10px; }
+        .countdown { font-size: 1.5em; margin: 20px 0; }
+        button { background: #ff1493; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #ff69b4; }
+    </style>
+</head>
+<body>
+    <h1>Happy Valentine's Day, [Hemant]!</h1>
+    <div class="message">
+        <p>Dear [Hemant],</p>
+        <p>You are my everything🎀. I love you more than words can say❤️!</p>
+        <p>With all my heart,<br>[Gursheen]</p>
+    </div>
+    
+    <div class="photos">
+        <img src="us.jpeg" alt="Us together">
+        <img src="us2.jpeg" alt="Our favorite memory">
+        <!-- Add more images as needed -->
+    </div>
+    
+    <div class="countdown" id="countdown">Counting down to our next date...</div>
+    
+    <button onclick="playSong()">Play Our Song</button>
+    <audio id="song" src="our song.mp3" preload="none"></audio>
+    
+    <script>
+        // Simple countdown to Valentine's Day (adjust year if needed)
+        const valentineDate = new Date('February 14, 2025 00:00:00').getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = valentineDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('countdown').innerHTML = `Days until next Valentine's: ${days}d ${hours}h`;
+        }, 1000);
+        
+        function playSong() {
+            const audio = document.getElementById('song');
+            audio.play();
+        }
+    </script>
+</body>
+</html>
